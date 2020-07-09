@@ -20,4 +20,9 @@ VS2015+SQL Server,
 3、合同添加后生成短链接（可扩展短信接口将链接以短信形式发送）。
 4、打开短链接预览合同，手写签名提交，签署合同
 
-
+#### 效果图
+![添加人员信息](https://images.gitee.com/uploads/images/2020/0709/213220_4c78e0b3_1372942.png "添加人员信息.png")
+![查看合同短链接](https://images.gitee.com/uploads/images/2020/0709/213258_4629215c_1372942.png "查看合同短链接.png")
+![合同预览](https://images.gitee.com/uploads/images/2020/0709/213327_86490c2d_1372942.png "合同预览.png")
+![手写签名](https://images.gitee.com/uploads/images/2020/0709/213355_bea65075_1372942.png "手写签名.png")
+![签名后的合同明](https://images.gitee.com/uploads/images/2020/0709/213413_7e1ba445_1372942.png "签名后的合同.png")
