@@ -75,6 +75,33 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\script.sql" />
+    <Content Include="contracts\13520000000\20200709212210\1.Png" />
+    <Content Include="contracts\13520000000\20200709212210\10.Png" />
+    <Content Include="contracts\13520000000\20200709212210\10s.png" />
+    <Content Include="contracts\13520000000\20200709212210\2.Png" />
+    <Content Include="contracts\13520000000\20200709212210\3.Png" />
+    <Content Include="contracts\13520000000\20200709212210\4.Png" />
+    <Content Include="contracts\13520000000\20200709212210\5.Png" />
+    <Content Include="contracts\13520000000\20200709212210\6.Png" />
+    <Content Include="contracts\13520000000\20200709212210\7.Png" />
+    <Content Include="contracts\13520000000\20200709212210\8.Png" />
+    <Content Include="contracts\13520000000\20200709212210\9.Png" />
+    <Content Include="contracts\13520000000\20200709212210\sigure.png" />
+    <Content Include="libs\ABCpdf.dll" />
+    <Content Include="libs\AspJpeg.dll" />
+    <Content Include="libs\Aspose.Pdf.dll" />
+    <Content Include="libs\Aspose.Pdf.XML" />
+    <Content Include="libs\Aspose.Slides.dll" />
+    <Content Include="libs\Aspose.Slides.xml" />
+    <Content Include="libs\Aspose.Words.dll" />
+    <Content Include="libs\Aspose.Words.xml" />
+    <Content Include="libs\Interop.ASPJPEGLib.dll" />
+    <Content Include="libs\itextsharp.dll" />
+    <Content Include="libs\log4net.dll" />
+    <Content Include="libs\O2S.Components.PDFRender4NET.dll" />
+    <Content Include="libs\pdfium.dll" />
+    <Content Include="libs\PDFLibNet.dll" />
     <Content Include="packages.config" />
     <Content Include="admin\api\activeuser.ashx" />
     <Content Include="admin\api\Article.ashx" />
@@ -116,6 +143,13 @@
     <Content Include="api\create.ashx" />
     <Content Include="upload\temp\合同模版.pdf" />
     <Content Include="api\GetContract.ashx" />
+    <Content Include="合同预览.png" />
+    <Content Include="手写签名.png" />
+    <Content Include="查看合同短链接.png" />
+    <Content Include="添加人员信息.png" />
+    <Content Include="签名后的合同.png" />
+    <Content Include="contracts\13520000000\20200709212210\13520000000.pdf" />
+    <Content Include="contracts\13520000000\20200709212210\测试合同模版.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

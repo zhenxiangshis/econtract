@@ -74,10 +74,6 @@
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Interop.ASPJPEGLib">
-      <HintPath>..\..\qihang\libs\Interop.ASPJPEGLib.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -106,9 +102,6 @@
     <Reference Include="O2S.Components.PDF4NET.Win, Version=9.9.9.3100, Culture=neutral, PublicKeyToken=80d03dd9e5b85317, processorArchitecture=MSIL">
       <HintPath>..\..\packages\O2S.Components.PDF4NET.Net.9.9.9.3100\lib\net40\O2S.Components.PDF4NET.Win.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="O2S.Components.PDFRender4NET">
-      <HintPath>..\..\qihang\libs\O2S.Components.PDFRender4NET.dll</HintPath>
     </Reference>
     <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>

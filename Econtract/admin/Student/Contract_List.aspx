@@ -152,7 +152,7 @@
                     closeBtn: 2,
                     shadeClose: true,
                     //area: ['80%', '30%'],
-                    content: '<%=model.Name%>，您需要签署服务协议，以保障您的合法权益，请点击下面的签署链接完成协议签署！（http://' + window.location.host + url + '）【起航教育】'
+                    content: '<%=model.Name%>，您需要签署服务协议，以保障您的合法权益，请点击下面的签署链接完成协议签署！（http://' + window.location.host + url + '）'
                 })
             })
         });

@@ -35,7 +35,7 @@ namespace qihang.admin.Student
             //Model.Student_Info student;
             //object url;
             //NewMethod(s, out student, out url, bll);
-            ////var cont = string.Format("{0}同学，欢迎您加入起航教育，在正式开始学习前，您需要签署服务协议，以保障您的合法权益，请点击下面的签署链接完成协议签署！（{1}）【起航教育】", student.Name, url);
+   
             BLL.Student_Contract bll = new BLL.Student_Contract();
             var list = bll.GetModelList(" studentid=" + s).OrderByDescending(m=>m.ContractID).Select(m => new
             {
