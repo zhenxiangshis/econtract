@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="/v3/css/buttons.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /*background-color:#c0c0c0;*/
+        }
+
+        #wrap {
+            width: 950px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #content {
+            width: 950px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            width: auto\9;
+            border: 0px;
+            display: block;
+        }
+
+        .rotate90 {
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -moz-transform: rotate(90deg); /* Firefox */
+            -webkit-transform: rotate(90deg); /* Safari 和 Chrome */
+            -o-transform: rotate(90deg); /* Opera */
+        }
+
+        #signatureparent {
+            color: darkblue;
+            background-color: darkgrey;
+            /*max-width:600px;*/
+            padding: 20px;
+        }
+
+        /*This is the div within which the signature canvas is fitted*/
+        #signature {
+            /*float:left;*/
+            width: 95%;
+            height: 90%;
+            margin: 0 auto;
+            border: 2px dotted black;
+            background-color: lightgrey;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: 950px) {
+            #wrap {
+                width: 100%;
+            }
+
+            #content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <div id="content" class="">
+        <div style="text-align:center;">请仔细阅读协议，确认无误后请在下方签名！</div>
+        <div id="signature" class=""></div>
+        <div id="tools" style="text-align:center;margin:10px 0;"><input type="button" id="ok" value="确定" class="button button-action button-rounded" style="margin-right:10px;" /><input type="button" id="reset" value="重置" class="button button-rounded" style="margin-left:10px;" /></div>
+    </div>
+    <!--<img id="image" src="" />-->
+
+    <script src="../v3/js/jquery-1.8.3.min.js"></script>
+    <script src="../v3/js/layer/layer.js"></script>
+    <!--[if IE 9]>
+    <script src="/v3/js/jSignature-master/libs/flashcanvas.js"></script>
+    <![endif]-->
+    <script src="../v3/js/jSignature-master/libs/jSignature.min.js"></script>
+    <script>
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+        var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        $(function () {
+            if (browser.versions.mobile && ua.match(/MicroMessenger/i) == "micromessenger") {
+                var phone = GetQueryString("m");
+                var date = GetQueryString("d");
+                var id = GetQueryString("i");
+                $.ajax({
+                    url: '/api/GetContract.ashx',
+                    type: 'POST',
+                    dataType: "json",
+                    //processData: false,
+                    data: { phone: phone, r: Math.random(), date: date },
+                    success: function (json) {
+                        layer.closeAll();
+                        $.each(json, function (i, e) {
+                            $("#wrap").append('<img src="' + e + '" />');
+                        })
+                    },
+                    beforeSend: function () {
+                        layer.load();
+                    }
+                });
+                var $sigdiv = $("#signature").jSignature({
+                    'UndoButton': false,
+                    color: "#000",
+                    lineWidth: 3,
+                    height: '100%',
+                    width: '100%',
+                })
+                $("#ok").click(function () {
+                    var datapair = $sigdiv.jSignature("getData", "image");
+                    //$("#image").attr('src', 'data:' + datapair[0] + "," + datapair[1]);
+                    layer.load(1, {
+                        shade: [0.1, '#fff'] //0.1透明度的白色背景
+                    });
+                    $.ajax({
+                        url: '/api/create.ashx',
+                        type: 'POST',
+                        dataType: "json",
+                        //processData: false,
+                        data: { dataurl: datapair[1], phone: phone, r: Math.random(), id: id, date: date },
+                        success: function (json) {
+                            layer.closeAll();
+                            //var s = json;
+                            //$("#bill").html('<img src="' + json.imgUrl + '" / >');
+                            layer.open({
+                                type: 0,
+                                title: "协议下载",
+                                closeBtn: 2,
+                                shadeClose: true,
+                                area: ['80%', '30%'],
+                                content: '<a href="' + json.Url + '"  >签署成功，点击预览！</a>'
+                            })
+                        }
+                    });
+                })
+                $("#reset").click(function () {
+                    var datapair = $sigdiv.jSignature("reset");
+                })
+            }
+            else {
+                var alertError = $("<div id=\"alertError\"><strong>请在手机微信中打开！</strong></div>");
+                alertError.css({
+                    "top": "30px",
+                    "color": "#FFFFFF",
+                    "text-shadow": "1px 1px 1px rgba(0, 0, 0, 0.2)",
+                    "box-shadow": "1px 1px 3px rgba(0, 0, 0, 0.2)",
+                    "margin": "10px",
+                    "position": "relative",
+                    "padding": "0px 50px",
+                    "height": "40px",
+                    "line-height": "40px",
+                    "margin-bottom": "20px",
+                    "font-size": "12px",
+                    "white-space": "nowrap",
+                    "overflow": "hidden",
+                    "text-overflow": "ellipsis",
+                    "color": "#FFFFFF",
+                    "text-shadow": "1px 1px 1px rgba(0, 0, 0, 0.2)",
+                    "background-color": "#C9282D",
+                    "background-image": "-webkit-linear-gradient(top, #EB3E42, #C9282D)",
+                    "background-image": "-moz-linear-gradient(top, #EB3E42, #C9282D)",
+                    "background-image": "-ms-linear-gradient(top, #EB3E42, #C9282D)",
+                    "background-image": "-o-linear-gradient(top, #EB3E42, #C9282D)",
+                    "background-image": "linear-gradient(top, #EB3E42, #C9282D)"
+                });
+                $("body").html(alertError).css({
+                    "font-family": "'Open Sans', sans-serif",
+                    "font-size": "16px",
+                    "background-color": "#262D33",
+                    "background-image": "-webkit-radial-gradient(circle, #46545F, #262D33)",
+                    "background-image": "-moz-radial-gradient(circle, #46545F, #262D33)",
+                    "background-image": "-ms-radial-gradient(circle, #46545F, #262D33)",
+                    "background-image": "-o-radial-gradient(circle, #46545F, #262D33)",
+                    "background-image": "radial-gradient(circle, #46545F, #262D33)",
+                    "width": "100%",
+                    "height": "100%"
+                });
+            }
+        })
+    </script>
+</body>
+</html>

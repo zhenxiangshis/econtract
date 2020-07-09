@@ -1,0 +1,199 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="admin_MasterPage" %>
+
+<%@ Register Src="MenuTree.ascx" TagPrefix="uc1" TagName="MenuTree" %>
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- 头文件 -->
+<head>
+    <title>::电子合同签订管理系统</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- 全局样式表 -->
+    <link href="/admin/media/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/admin/media/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/messenger.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/media/css/messenger-theme-block.css" rel="stylesheet" type="text/css" />
+    <!-- END 全局样式表 -->
+    <link rel="shortcut icon" href="/admin/media/image/favicon.ico" />
+    <!-- 核心插件 -->
+    <script src="/admin/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="/admin/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+    <!--[if lte IE 7]>
+        <script type="text/javascript">
+        alert('网站后台暂时不支持IE8一下内核的IE浏览器或者IE兼容模式');
+        </script>
+    <![endif]-->
+    <script type="text/javascript">
+        // js加载完成脚本错误验证
+        window.onerror = function (e) {
+            if (!e.indexOf('toLowerCase')) {
+                alert('警告: \n     当前页面存在错误 \n     为了不影响您的操作请尝试按 F5 刷新解决此问题! \n ps:   错误原因 \n     1.网络繁忙脚本加载不完全 \n     2.当前数据有误 \n     3.程序BUG(希望不是) \n 如刷新不能解决请联系管理员 :)');
+            }
+        }
+        // 加载用户选定的样式文件 ps;写在这里防止脚本或者页面加载时间过长导致样式刷新替换
+        if ($.cookie('style_color') != null) {
+            $('#style_color').attr("href", "./media/css/" + $.cookie('style_color') + ".css");
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<!-- END 头文件 -->
+<body class="page-header-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- 顶部导航 -->
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <!-- LOGO -->
+                <a class="brand" href="http://www.qihang119.com" target="_blank">
+                    <img src="/admin/media/image/logo-white.png" alt="logo" />
+                </a>
+                <!-- END LOGO -->
+                <!-- 开始菜单显示开关响应 -->
+                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="/admin/media/image/menu-toggler.png" alt="" />
+                </a>
+                <!-- END 开始菜单显示开关响应 -->
+                <!-- BEGIN 顶部菜单 -->
+                <ul class="nav pull-right">
+                    <!-- BEGIN 用户信息 -->
+                    <li class="dropdown user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img alt="" src="/admin/media/image/avatar_small.png" />
+                            <span class="username"><%= userName %></span>
+                            <i class="icon-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/account/User_EditInfo.aspx"><i class="icon-user"></i>账户资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/admin/Logout.aspx"><i class="icon-signout"></i>退出</a></li>
+                        </ul>
+                    </li>
+                    <!-- END 用户信息 -->
+                </ul>
+                <!-- END 顶部菜单 -->
+            </div>
+        </div>
+        <!-- END 顶部导航 -->
+    </div>
+    <div class="page-container">
+        <!-- 侧边栏 -->
+        <div class="page-sidebar nav-collapse collapse">
+            <!-- BEGIN 侧边栏菜单 -->
+            <ul class="page-sidebar-menu">
+                <li>
+                    <!-- 侧边栏显示开关按钮 -->
+                    <div class="sidebar-toggler hidden-phone"></div>
+                    <!-- BEGIN 侧边栏显示开关按钮 -->
+                </li>
+                <uc1:MenuTree runat="server" ID="MenuTree" />
+            </ul>
+            <!-- END 侧边栏菜单 -->
+        </div>
+        <!-- END 侧边栏 -->
+        <!-- 页面 -->
+        <div class="page-content">
+            <!-- 页面容器-->
+            <div class="container-fluid">
+                <!-- 页面头部-->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <!-- 主题切换 -->
+                        <div class="color-panel hidden-phone">
+                            <div class="color-mode-icons icon-color"></div>
+                            <div class="color-mode-icons icon-color-close"></div>
+                            <div class="color-mode">
+                                <p>主题皮肤</p>
+                                <ul class="inline">
+                                    <li class="color-black current color-default" data-style="default"></li>
+                                    <li class="color-blue" data-style="blue"></li>
+                                    <li class="color-brown" data-style="brown"></li>
+                                    <li class="color-purple" data-style="purple"></li>
+                                    <li class="color-grey" data-style="grey"></li>
+                                    <li class="color-white color-light" data-style="light"></li>
+                                </ul>
+                                <label>
+                                    <span>布局</span>
+                                    <select class="layout-option m-wrap small">
+                                        <option value="fluid" selected>全屏</option>
+                                        <option value="boxed">居中</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span>导航</span>
+                                    <select class="header-option m-wrap small">
+                                        <option value="fixed" selected>固定</option>
+                                        <option value="default">默认</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span>侧边栏</span>
+                                    <select class="sidebar-option m-wrap small">
+                                        <option value="fixed">固定</option>
+                                        <option value="default" selected>默认</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span>版权</span>
+                                    <select class="footer-option m-wrap small">
+                                        <option value="fixed">固定</option>
+                                        <option value="default" selected>默认</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <asp:ContentPlaceHolder ID="breadcrumb" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <!-- END 主题切换 -->
+                <!-- END 页面头部-->
+                <asp:ContentPlaceHolder ID="body" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- END 页面容器-->
+        </div>
+        <!-- END 页面 -->
+    </div>
+    <div class="footer">
+        <div class="footer-inner">
+            北京织梦起航教育科技有限公司 版权所有 Copyright(C) 2007-2013 QIHANG All Rights Reserved.
+        </div>
+        <div class="footer-tools">
+            <span class="go-top">
+                <i class="icon-angle-up"></i>
+            </span>
+        </div>
+    </div>
+    <!-- BEGIN JAVASCRIPTS(在底部的负载的JavaScript代码，这将减少页面加载时间) -->
+    <!-- 核心插件 -->
+    <script src="/admin/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="/admin/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="/admin/media/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+	<script src="/admin/media/js/excanvas.min.js"></script>
+	<script src="/admin/media/js/respond.min.js"></script>  
+	<![endif]-->
+    <script src="/admin/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/admin/media/js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/admin/media/js/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/admin/media/js/messenger.min.js" type="text/javascript"></script>
+    <!-- END 核心插件 -->
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+
