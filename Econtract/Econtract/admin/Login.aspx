@@ -77,7 +77,7 @@
     <!-- END LOGIN -->
     <!-- BEGIN COPYRIGHT -->
     <div class="copyright">
-        北京织梦起航教育科技有限公司 版权所有<br>
+        北京XXXX教育科技有限公司 版权所有<br>
         Copyright(C) 2007-2013 QIHANG All Rights Reserved.
     </div>
     <!-- END COPYRIGHT -->

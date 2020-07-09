@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -109,11 +113,7 @@
     <Content Include="admin\media\js\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="admin\media\js\ueditor\third-party\video-js\font\vjs.woff" />
     <Content Include="admin\media\js\uploader\README.md" />
-    <Content Include="api\addopinion.ashx" />
-    <Content Include="api\choujiang.ashx" />
-    <Content Include="api\count.ashx" />
     <Content Include="api\create.ashx" />
-    <Content Include="api\ygcj.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -884,7 +884,6 @@
     <Content Include="admin\Menu\Menu_TreeEdit.aspx" />
     <Content Include="admin\Menu\Menu_TreeList.aspx" />
     <Content Include="admin\Menu\Menu_TreeView.aspx" />
-    <Content Include="admin\Setting\Setting_SMS.aspx" />
     <Content Include="admin\Student\Contract_Add.aspx" />
     <Content Include="admin\Student\Contract_Delete.aspx" />
     <Content Include="admin\Student\Contract_List.aspx" />
@@ -893,6 +892,8 @@
     <Content Include="admin\Student\Student_Edit.aspx" />
     <Content Include="admin\Student\Student_List.aspx" />
     <Content Include="Web.config" />
+    <Content Include="weixin\contract.html" />
+    <Content Include="weixin\test.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\Account\Depart_Add.aspx.cs">
@@ -1098,13 +1099,6 @@
     <Compile Include="admin\Menu\Menu_TreeView.aspx.designer.cs">
       <DependentUpon>Menu_TreeView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\Setting\Setting_SMS.aspx.cs">
-      <DependentUpon>Setting_SMS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\Setting\Setting_SMS.aspx.designer.cs">
-      <DependentUpon>Setting_SMS.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\Student\Contract_Add.aspx.cs">
       <DependentUpon>Contract_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1187,7 +1181,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="weixin\" />
+    <Folder Include="upload\temp\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -17,7 +17,7 @@ using System.Collections.Generic;
 public class create : IHttpHandler
 {
     //public UploadResult Result { get; private set; }
-     public void ProcessRequest(HttpContext context)
+    public void ProcessRequest(HttpContext context)
     {
         ResultJson result = new ResultJson();
         context.Response.ContentType = "application/Json";
@@ -36,9 +36,6 @@ public class create : IHttpHandler
         }
         else
         {
-            //人才委托
-            List<ContractPage> rcwt = new List<ContractPage>();
-            rcwt.Add(new ContractPage() { pageid = 1, isSigure = true, x = 860, y = 1420 });
 
             List<ContractPage> kcxy = new List<ContractPage>();
             kcxy.Add(new ContractPage() { pageid = 1, isSigure = false, x = 0, y = 0 });
@@ -47,47 +44,12 @@ public class create : IHttpHandler
             kcxy.Add(new ContractPage() { pageid = 4, isSigure = true, x = 827, y = 1320 });
 
             List<ContractPage> kcxy2 = new List<ContractPage>();
-            kcxy2.Add(new ContractPage() { pageid = 1, isSigure = false, x = 0, y = 0 });
-            kcxy2.Add(new ContractPage() { pageid = 2, isSigure = true, x = 860, y = 1420 });
-            kcxy2.Add(new ContractPage() { pageid = 3, isSigure = false, x = 0, y = 0 });
-            kcxy2.Add(new ContractPage() { pageid = 4, isSigure = false, x = 0, y = 0 });
-            kcxy2.Add(new ContractPage() { pageid = 5, isSigure = true, x = 827, y = 1320 });
-
-            List<ContractPage> kcxy3 = new List<ContractPage>();
-            kcxy3.Add(new ContractPage() { pageid = 1, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 2, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 3, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 4, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 5, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 6, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 7, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 8, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 9, isSigure = false, x = 0, y = 0 });
-            kcxy3.Add(new ContractPage() { pageid = 10, isSigure = true, x = 827, y = 1320 });
             //var s =path + "/sigure.png";
             var s = PicHelper.decodeBase64ToImage(dataUrl, path + "/sigure.png");
-            if (File.Exists(HttpContext.Current.Server.MapPath(path + "10.png")))
-            {
-                Draw(s, path, kcxy3);
-                CreatePDFDoc(path, phone, kcxy3);
-            }
-            else if (File.Exists(HttpContext.Current.Server.MapPath(path + "5.png")))
-            {
-                //Draw3(s, path);
-                //CreatePDFDoc3(path, phone);
-                Draw(s, path, kcxy2);
-                CreatePDFDoc(path, phone, kcxy2);
-            }
-            else if (File.Exists(HttpContext.Current.Server.MapPath(path + "2.png")))
-            {
-                Draw(s, path, kcxy);
-                CreatePDFDoc(path, phone, kcxy);
-            }
-            else
-            {
-                Draw(s, path, rcwt);
-                CreatePDFDoc(path, phone, rcwt);
-            }
+
+            Draw(s, path, kcxy);
+            CreatePDFDoc(path, phone, kcxy);
+
             result.State = 0;
             result.Url = path + phone + ".pdf";
             result.Msg = "签署成功,点击预览！";
@@ -178,21 +140,6 @@ public class create : IHttpHandler
             string filename = path + phone + ".pdf";
             PdfWriter.GetInstance(document, new FileStream(HttpContext.Current.Server.MapPath(filename), FileMode.Create));
             document.Open();
-            #region   字体设置
-            //BaseFont bfChinese = BaseFont.CreateFont("C:\\WINDOWS\\Fonts\\simsun.ttc,1", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            //iTextSharp.text.Font fontChineseBold = new iTextSharp.text.Font(bfChinese, 18, iTextSharp.text.Font.BOLD);
-
-            //iTextSharp.text.Font fontChinese = new iTextSharp.text.Font(bfChinese, 18, iTextSharp.text.Font.NORMAL);
-
-            //iTextSharp.text.Font fontChineseUnderLine = new iTextSharp.text.Font(bfChinese, 18, iTextSharp.text.Font.UNDERLINE);
-            //iTextSharp.text.Font fontChineseUnderLine16 = new iTextSharp.text.Font(bfChinese, 16, iTextSharp.text.Font.UNDERLINE);
-            //iTextSharp.text.Font fontChineseBold10 = new iTextSharp.text.Font(bfChinese, 24, iTextSharp.text.Font.BOLD);
-            //iTextSharp.text.Font fontChineseBold20 = new iTextSharp.text.Font(bfChinese, 50, iTextSharp.text.Font.BOLD);
-            //iTextSharp.text.Font fontChinese5 = new iTextSharp.text.Font(bfChinese, 14, iTextSharp.text.Font.NORMAL);
-            //iTextSharp.text.Font fontChinese5Bold = new iTextSharp.text.Font(bfChinese, 14, iTextSharp.text.Font.BOLD);
-            //iTextSharp.text.Font fontChinese8 = new iTextSharp.text.Font(bfChinese, 16, iTextSharp.text.Font.NORMAL);
-
-            #endregion
             var width = 510;
             var height = 720;
             Paragraph p = new Paragraph();
@@ -271,11 +218,26 @@ public class create : IHttpHandler
         public string Url { get; set; }
         public string Msg { get; set; }
     }
+    /// <summary>
+    /// 合同页
+    /// </summary>
     public class ContractPage
     {
+        /// <summary>
+        /// 页码
+        /// </summary>
         public int pageid { get; set; }
+        /// <summary>
+        /// 是否需要签名
+        /// </summary>
         public bool isSigure { get; set; }
+        /// <summary>
+        /// 签名位置x
+        /// </summary>
         public int x { get; set; }
+        /// <summary>
+        /// 签名位置y
+        /// </summary>
         public int y { get; set; }
     }
     public enum UploadState
