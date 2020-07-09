@@ -1,0 +1,45 @@
+License agreement
+VERY IMPORTANT - READ CAREFULLY:
+
+This O2 Solutions Software License Agreement (hereinafter, this "LICENSE") is a legal agreement between you (either an individual or a single entity) and O2 Solutions, SRL. ("O2 Solutions"), for the software containing this LICENSE which has been obtained through O2 Solutions or its authorized distributor.
+
+1. OWNERSHIP; LICENSE GRANT
+
+This is a license agreement and NOT an agreement for sale. O2 Solutions continues to own the copy of the SOFTWARE contained on the disk and all other copies that you are authorized by this LICENSE to make. Your rights to the SOFTWARE are specified in this LICENSE, and O2 Solutions retains all rights not expressly granted to you in this LICENSE. O2 Solutions hereby grants to you, and you accept, a non-exclusive, non-transferable license to use, copy and modify the SOFTWARE only as authorized below.
+
+2. PERMITTED USES. This LICENSE grants you the following rights:
+
+A. The SOFTWARE is licensed per individual developer. You may make copies on more than one computer, as long as the use of the SOFTWARE is by the same developer.
+B. Solely with respect to electronic documents included with the SOFTWARE, you may make a copy for each developer for which the Software has been licensed as described in Section 2.A, above; provided, that such copies shall be used only by such developer for internal purposes and are not to be republished or distributed to any other third party.
+C. You may use the evaluation versions of the SOFTWARE for the limited purposes of demonstrations, trials and design time evaluations.
+
+3. PROHIBITED USES. You may not, without the prior written permission of O2 Solutions:
+
+A. Disassemble, decompile or "unlock", decode or otherwise reverse translate or engineer, or attempt in any manner to reconstruct or discover any source code or underlying algorithms of SOFTWARE provided in object code form only.
+B. Use, copy, modify, or merge copies of the SOFTWARE and any accompanying documents except as permitted in this LICENSE.
+C. Transfer, rent, lease, or sublicense the SOFTWARE.
+
+4. REDISTRIBUTABLE COMPONENTS
+
+A. The files o2s.components.pdf4net.netcore.dll, o2s.components.pdf4net.netstandard.dll and o2s.components.pdf4net.win.dll are considered as REDISTRIBUTABLE DLLs.
+B. In addition to the license and rights granted in Sections I and II, O2 Solutions grants you a nonexclusive, royalty-free right to reproduce and distribute the object code version of the SOFTWARE designated in the SOFTWARE as (i) those portions of the SOFTWARE which are identified in the documentation as REDISTRIBUTABLE DLLs ("DLLs"); provided: you distribute the REDISTRIBUTABLES in object code form only in conjunction with and as part of your software application product which adds significant and primary functionality; you do not use O2 Solutions' name, logo or trademarks to market your software application product; you include a valid copyright notice on your SOFTWARE; and
+C. In addition to the other requirements set forth in this Section 4, you hereby agree to indemnify, hold harmless, and defend O2 Solutions from and against any and all liabilities, damages, losses, costs and expenses (including attorneys' fees) arising from or related to any claim, action, proceeding or allegation that arise or result from the use and distribution of any of your software application product(s) or components.
+
+5. COPYRIGHT
+
+All title and copyrights in and to the SOFTWARE are owned by O2 Solutions. The SOFTWARE is protected by United States copyright laws and international treaty provisions. All rights are reserved worldwide. You must treat the SOFTWARE like any other copyrighted material, except that you may, in addition to the copies permitted in this LICENSE, make one copy of the SOFTWARE solely for backup or archival purposes. No part of the accompanying printed materials may be reproduced, transmitted, transcribed, stored in any retrieval system, or translated into any language by any means without the express prior written permission of O2 Solutions.
+
+6. TERMINATION
+
+This LICENSE and your right to use the SOFTWARE will terminate immediately without notice from O2 Solutions if you fail to comply with the terms and conditions of this LICENSE. Upon termination, you agree to destroy the SOFTWARE, including all accompanying documents and copies. This is in addition to and not in lieu of any criminal, civil or other remedies available to O2 Solutions.
+
+7. LIMITED WARRANTY
+
+A. O2 Solutions does not warranty that the SOFTWARE will be error-free. Except with respect to REDISTRIBUTABLES, which are provided "AS IS," without warranty of any kind, O2 Solutions warrants that the SOFTWARE will perform substantially in accordance with the accompanying electronic documentation for a period of thirty (30) days from the date of receipt.
+B. O2 Solutions' entire liability, in contract tort or otherwise, and your exclusive remedy under the performance warranty set forth in Section 7.A, shall be, at O2 Solutions' option, either (a) return of the purchase price paid, or (b) repair or replacement of the defective SOFTWARE. This limited warranty is void if failure of the SOFTWARE has resulted from accident, abuse, or misapplication. Any replacement SOFTWARE will be warranted for the remainder of the original thirty (30) day period.
+C. EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 7, O2 SOLUTIONS DISCLAIMS ALL OTHER WARRANTIES, EITHER EXPRESS OR IMPLIED, WHETHER ARISING BY STATUTE OR OTHERWISE IN LAW OR FROM A COURSE OF DEALING OR USAGE OR TRADE, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF ACCURACY, COMPLETENESS, PERFORMANCE, CURRENCY, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE WITH REGARD TO THE SOFTWARE.
+
+8. LIMITATION OF LIABILITIES
+
+O2 Solutions' liability, whether in contract, or otherwise, arising out of Licensee's use of, or in connection with, the SOFTWARE, or otherwise under this Agreement, shall not exceed the amount of the license fee paid by you to O2 Solutions. IN NO EVENT SHALL O2 SOLUTIONS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS
+OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF O2 SOLUTIONS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
