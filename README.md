@@ -1,17 +1,17 @@
 #  e-contract
 
 #### 介绍
-电子合同签订系统
+电子合同签订系统，全程线上签约，秒速签署，支持PC、手机、微信等多终端签署， 随时随地签合同。无需打印、快递合同，线上存储管理，成本节省95%以上。
+可根据需要，扩展多模板合同签署。
+合同创建完成后，可扩展短信发送给签署方。
 
 #### 软件架构
-软件架构说明
+VS2015+SQL Server,
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+需要部署到IIS上进行测试、调试和使用。
 
 #### 使用说明
 
@@ -28,11 +28,4 @@
 4.  新建 Pull Request
 
 
-#### 码云特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
