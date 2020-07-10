@@ -143,6 +143,24 @@
     <Content Include="api\create.ashx" />
     <Content Include="upload\temp\合同模版.pdf" />
     <Content Include="api\GetContract.ashx" />
+
+    <Content Include="v3\fonts\font-awesome-4.6.0-fonts-fontawesome-webfont.woff2" />
+    <Content Include="v3\fonts\fontawesome-webfont.ttf" />
+    <Content Include="v3\fonts\fontawesome-webfont.woff2" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\global.json" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\project.json" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\project.lock.json" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\SignatureDataConversion.xproj" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\project.json" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\project.lock.json" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\SignatureDataConversion.Tests.xproj" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_PHP\core\jSignature_Tools_Base30.php" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_PHP\core\jSignature_Tools_SVG.php" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_PHP\tests\test_jSignature_Tools.php" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_Ruby\j_signature_base30.rb" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_Ruby\test_j_signature_base30.rb" />
+    <Content Include="v3\js\jSignature-master\jquery插件库.url" />
+
     <Content Include="合同预览.png" />
     <Content Include="手写签名.png" />
     <Content Include="查看合同短链接.png" />
@@ -924,6 +942,45 @@
     <Content Include="admin\Student\Student_Edit.aspx" />
     <Content Include="admin\Student\Student_List.aspx" />
     <Content Include="v.aspx" />
+    <Content Include="v3\css\buttons.css" />
+    <Content Include="v3\js\jquery-1.8.3.min.js" />
+    <Content Include="v3\js\jSignature-master\examples\index.html" />
+    <Content Include="v3\js\jSignature-master\examples\noconflict.html" />
+    <Content Include="v3\js\jSignature-master\examples\unmini.html" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\SignatureDataConversion.sln" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\samples\reference_svg_nonsmoothed.svg" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\samples\reference_svg_smoothed.svg" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_PHP\tests\test.png" />
+    <Content Include="v3\js\jSignature-master\extras\SignatureDataConversion_PHP\tests\test.svg" />
+    <Content Include="v3\js\jSignature-master\index.html" />
+    <Content Include="v3\js\jSignature-master\libs\flashcanvas.js" />
+    <Content Include="v3\js\jSignature-master\libs\flashcanvas.min.js" />
+    <Content Include="v3\js\jSignature-master\libs\flashcanvas.swf" />
+    <Content Include="v3\js\jSignature-master\libs\jquery.js" />
+    <Content Include="v3\js\jSignature-master\libs\jSignature.min.js" />
+    <Content Include="v3\js\jSignature-master\libs\jSignature.min.noconflict.js" />
+    <Content Include="v3\js\jSignature-master\libs\modernizr.js" />
+    <Content Include="v3\js\jSignature-master\src\jSignature.js" />
+    <Content Include="v3\js\jSignature-master\src\plugins\jSignature.CompressorBase30.js" />
+    <Content Include="v3\js\jSignature-master\src\plugins\jSignature.CompressorSVG.js" />
+    <Content Include="v3\js\jSignature-master\src\plugins\jSignature.UndoButton.js" />
+    <Content Include="v3\js\jSignature-master\src\plugins\signhere\jSignature.SignHere.js" />
+    <Content Include="v3\js\jSignature-master\src\plugins\signhere\signhere.svg" />
+    <Content Include="v3\js\jSignature-master\test\index.html" />
+    <Content Include="v3\js\jSignature-master\test\libs\qunit.css" />
+    <Content Include="v3\js\jSignature-master\test\libs\qunit.js" />
+    <Content Include="v3\js\jSignature-master\test\tests.js" />
+    <Content Include="v3\js\jSignature-master\www.jq22.com.txt" />
+    <Content Include="v3\js\layer\layer.js" />
+    <Content Include="v3\js\layer\mobile\layer.js" />
+    <Content Include="v3\js\layer\mobile\need\layer.css" />
+    <Content Include="v3\js\layer\theme\default\icon-ext.png" />
+    <Content Include="v3\js\layer\theme\default\icon.png" />
+    <Content Include="v3\js\layer\theme\default\layer.css" />
+    <Content Include="v3\js\layer\theme\default\loading-0 - 副本.gif" />
+    <Content Include="v3\js\layer\theme\default\loading-0.gif" />
+    <Content Include="v3\js\layer\theme\default\loading-1.gif" />
+    <Content Include="v3\js\layer\theme\default\loading-2.gif" />
     <Content Include="Web.config" />
     <Content Include="weixin\contract.html" />
     <Content Include="weixin\test.html" />
@@ -1161,6 +1218,14 @@
     <Compile Include="v.aspx.designer.cs">
       <DependentUpon>v.aspx</DependentUpon>
     </Compile>
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\converter_alphanum_base30.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\converter_toSVG.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\src\SignatureDataConversion\imagingtools_Stats.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\common_base_for_tests.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\converter_alphanum_base30_TESTS.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\converter_toSVG_TESTS.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\imagetools_Stats_TESTS.cs" />
+    <Compile Include="v3\js\jSignature-master\extras\SignatureDataConversion_dotNet\test\SignatureDataConversion.Tests\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libraries\BLL\BLL.csproj">
@@ -1192,9 +1257,7 @@
       <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="v3\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
